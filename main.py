@@ -1,16 +1,20 @@
-# This is a sample Python script.
+import spacy
+#Installerat spacy och importat
+#Laddar in spaCy modellen
+nlp = spacy.load('en_core_web_lg')
 
-# Press Skift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#skapar en funktion som jämför text1 och text2
+def similarity(text1, text2):
+    doc1 = nlp(text1)
+    doc2 = nlp(text2)
+    #Beräknar likheter mellan dokumenten
+    similarity_score = doc1.similarity(doc2)
+    return similarity_score
+#Ber användaren mata in 2 texter
+text1 = input('Input your first text here')
+text2 = input('Input your second text here')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+similarity_score = similarity(text1, text2)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(similarity_score)
