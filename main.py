@@ -50,7 +50,7 @@ while True:
         print('Choose what you want to do')
         print('1. Show similarity score')
         print('2. Show similar words')
-        print('3. Extract meaningful words')
+        print('3. Extract keywords')
         print('4. Enter new texts')
         print('0. Quit')
         choice = input('Enter your choice (1, 2, 3, 4 or 0): ')
