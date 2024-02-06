@@ -58,7 +58,7 @@ while True:
         if choice == '1':
             print(f"Similarity score between the texts: {similarity_score}")
             continue
-        if choice == '2':
+        elif choice == '2':
             similar_words = extract_similar_words(text1, text2)
             print("Similar Words:", similar_words)
         elif choice == '3':
