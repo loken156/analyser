@@ -30,11 +30,6 @@ def extract_similar_words(text1, text2):
 
     # Hittar vilka ord som matchar
     similar_words = tokens_text1.intersection(tokens_text2)
-
-    #Hittar common words i texterna och sparar i variabler
-    #common_words1 = [token.text for token in doc1 if token.text.lower() in similar_words]
-    #common_words2 = [token.text for token in doc2 if token.text.lower() in similar_words]
-
     return similar_words
 
 while True:
