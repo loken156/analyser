@@ -4,7 +4,7 @@ import spacy
 nlp = spacy.load('en_core_web_lg')
 
 #skapar en funktion som jämför text1 och text2
-def similarity(text1, text2):
+def similarity(text1, text2): # Förklara detta resultat!!
     doc1 = nlp(text1)
     doc2 = nlp(text2)
     #Beräknar likheter mellan dokumenten
@@ -12,7 +12,7 @@ def similarity(text1, text2):
     return similarity_score
 
 # Funktion för att extrahera nyckelord
-def extract_keywords(text):
+def extract_keywords(text): # dela upp namn och ord
     doc = nlp(text)
     #skapar en variabel som exkluderar alla extra or som and, is och of. samt tar bort allt som innehåller andra tecken än alfabetiska.
     keywords = [token.text for token in doc if not token.is_stop and token.is_alpha]
@@ -51,6 +51,9 @@ while True:
         print('4. Enter new texts')
         print('0. Quit')
         choice = input('Enter your choice (1, 2, 3, 4 or 0): ')
+
+        # Case meny?
+        # Låsa menyn i en loop så att man väljer för att få se den.
 
         if choice == '1':
             print(f"Similarity score between the texts: {similarity_score}")
