@@ -32,6 +32,12 @@ def extract_similar_words(text1, text2):
     similar_words = tokens_text1.intersection(tokens_text2)
     return similar_words
 
+def extract_names(text1, text2):
+    doc1 = nlp(text1)
+    doc2 = nlp(text2)
+    person_names = [ent.text for ent in doc1.ents and doc2.ents if ent.label_ == "PERSON"]
+    print(person_names)
+
 while True:
     #Ber användaren mata in 2 texter
     print("Welcome to this Text-analyze app")
@@ -57,7 +63,7 @@ while True:
 
         if choice == '1':
             print(f"Similarity score between the texts: {similarity_score}")
-            continue
+
         elif choice == '2':
             similar_words = extract_similar_words(text1, text2)
             print("Matching words in both texts:", similar_words)
@@ -69,7 +75,11 @@ while True:
             print("Keywords in Text 2: ", keywords_text2)
         elif choice == '4':
             break
+        elif choice == '5':
+            extract_names(text1, text2)
         elif choice == '0':
             exit()
         else:
             print("Invalid choice")
+
+        input('Press any key to continue')
