@@ -14,6 +14,7 @@ def similarity(text1, text2):
 # Funktion för att extrahera nyckelord
 def extract_keywords(text):
     doc = nlp(text)
+    #skapar en variabel som exkluderar alla extra or som and, is och of. samt tar bort allt som innehåller andra tecken än alfabetiska.
     keywords = [token.text for token in doc if not token.is_stop and token.is_alpha]
     return keywords
 
@@ -38,6 +39,7 @@ def extract_similar_words(text1, text2):
 
 while True:
     #Ber användaren mata in 2 texter
+    print("Welcome to this Text-analyze app")
     text1 = input('Input your first text here: ')
     text2 = input('Input your second text here: ')
 
