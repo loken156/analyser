@@ -51,7 +51,7 @@ while True:
     while True:
         print('Choose what you want to do')
         print('1. Show similarity score')
-        print('2. Show similar words')
+        print('2. Show matching words')
         print('3. Extract keywords')
         print('4. Enter new texts')
         print('0. Quit')
@@ -62,7 +62,7 @@ while True:
             continue
         elif choice == '2':
             similar_words = extract_similar_words(text1, text2)
-            print("Similar Words:", similar_words)
+            print("Matching words in both texts:", similar_words)
         elif choice == '3':
             #skapar variabler med de extractade keywordsen
             keywords_text1 = extract_keywords(text1)
